@@ -57,6 +57,4 @@ class AbstractLivingEntity : public AbstractEntity
         AbstractEntity::passBout();
     }
 
-    
-
 };
