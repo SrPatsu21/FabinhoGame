@@ -1,6 +1,4 @@
-# FabinhoGame
 [<<Abstract>>AbstractEntity]<-[<<Abstract>>AbstractLivingEntity]
-[<<Interface>>Collectionable]<-[<<Abstract>>AbstractEntity]
 [WorldMap]
 
 //LivingEntity
@@ -12,7 +10,7 @@
 [<<Abstract>>Mobs]<-[monster]
 
 //itens
-[InterfaceCollectionable]<-[<<Abstract>>AbstractItens]
+[<<Interface>>InterfaceCollectionable]<-[<<Abstract>>AbstractItens]
 [<<Abstract>>AbstractItens]<-[<<Abstract>>AbstractUsableItens]
 [<<Abstract>>AbstractItens]<-[<<Abstract>>AbstractThrowableItens]
 [<<Abstract>>AbstractEntity]<-[AbstractParticles]
@@ -24,7 +22,7 @@
 
 //attributs
 [<<Abstract>>AbstractCharacter||+attack(); +defend()]
-[<<Abstract>>AbstractLivingEntity|-life int; -streng: int; -damage: int|]
+[<<Abstract>>AbstractLivingEntity|-life: int; -damage: int|]
 [<<Abstract>>AbstractUsableItens|-damage: int|+use(); +block()]
 [<<Interface>>Collectionable||+take();+discard()]
 [<<Abstract>>AbstractItens|taked: boolean|]
