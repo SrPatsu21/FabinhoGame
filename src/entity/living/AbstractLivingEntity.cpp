@@ -23,9 +23,9 @@ void AbstractLivingEntity::passBout()
         maxlife = 0;
     }
 }
-void AbstractLivingEntity::atackEnemy(AbstractLivingEntity enemy, int damage)
+void AbstractLivingEntity::atackEnemy(AbstractLivingEntity * enemy, int damage)
 {
-    enemy.receiveDamage(getDamage(), getLevel());
+    enemy->receiveDamage(getDamage(), getLevel());
 }
 
 void AbstractLivingEntity::receiveDamage(int damage, int enemy_level)

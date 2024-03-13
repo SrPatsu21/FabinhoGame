@@ -21,7 +21,7 @@ int AbstractCharacter::getDamage()
     return this->getDamage();//+ item damage bonus
 }
 
-void AbstractCharacter::atackEnemy(AbstractLivingEntity enemy)
+void AbstractCharacter::atackEnemy(AbstractLivingEntity * enemy)
 {
-    enemy.receiveDamage(getDamage(), getLevel());
+    enemy->receiveDamage(getDamage(), getLevel());
 }

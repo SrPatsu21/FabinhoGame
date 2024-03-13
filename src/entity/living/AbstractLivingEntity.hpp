@@ -10,8 +10,8 @@ private:
 
 protected:
     AbstractLivingEntity(int maxlife = 1, int life = 1, int damage = 0, int level = 0){}
-    ~AbstractLivingEntity(){}
 public:
+    ~AbstractLivingEntity(){}
     //encapsulation
     virtual int getMaxLife();
     virtual int getLife();
@@ -24,7 +24,9 @@ public:
 
     virtual void receiveDamage(int damage, int enemy_level);
 
-    virtual void atackEnemy(AbstractLivingEntity enemy, int damage);
+    virtual void atackEnemy(AbstractLivingEntity * enemy, int damage);
+    virtual void atackEnemy(AbstractLivingEntity * enemy);
+
     //inehrent
     virtual void passBout();
 };

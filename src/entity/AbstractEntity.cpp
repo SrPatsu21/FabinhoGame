@@ -1,11 +1,11 @@
 #include "./AbstractEntity.hpp"
 
-    int AbstractEntity::getBout()
-    {
-        return bout;
-    }
+int AbstractEntity::getBout()
+{
+    return bout;
+}
 
-    void AbstractEntity::passBout()
-    {
-        this->bout++;
-    }
+void AbstractEntity::passBout()
+{
+    this->bout++;
+}
