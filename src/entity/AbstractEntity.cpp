@@ -1,14 +1,11 @@
-class AbstractEntity
-{
-    int bout;
-    public:
-    virtual int getBout()
+#include "./AbstractEntity.hpp"
+
+    int AbstractEntity::getBout()
     {
         return bout;
     }
 
-    virtual void passBout()
+    void AbstractEntity::passBout()
     {
         this->bout++;
     }
-};

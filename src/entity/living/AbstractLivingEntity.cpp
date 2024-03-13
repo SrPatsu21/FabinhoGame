@@ -1,60 +1,65 @@
+#include "./AbstractLivingEntity.hpp"
 #include <cmath>
-#include "../AbstractEntity.cpp";
+#include <iostream>
 
-class AbstractLivingEntity : public AbstractEntity
+AbstractLivingEntity::AbstractLivingEntity(int maxlife = 1, int life = 1, int damage = 0, int level = 0)
 {
-    private:
-    int maxlife, life, damage, level;
+    this->maxlife=maxlife;
+    this->life=life;
+    this->damage=damage;
+    this->level=level;
+}
 
+AbstractLivingEntity::~AbstractLivingEntity()
+{
+    std::cout << "Entity Desapier in" << getBout() << "Bout" << std::endl;
+}
 
-    public:
-    AbstractLivingEntity(int maxlife = 1, int life = 1, int damage = 0, int level = 0)
+void AbstractLivingEntity::passBout()
+{
+    AbstractEntity::passBout();
+    if(life == 0)
     {
-        this->maxlife=maxlife;
-        this->life=life;
-        this->damage=damage;
-        this->level=level;
+        maxlife = 0;
     }
+}
+void AbstractLivingEntity::atackEnemy(AbstractLivingEntity enemy, int damage)
+{
+    enemy.receiveDamage(getDamage(), getLevel());
+}
 
-    //encapsulation
-    virtual int getMaxLife()
-    {
-        return maxlife;
-    }
-    virtual int getLife()
-    {
-        return life;
-    }
-    virtual int getDamage()
-    {
-        return damage;
-    }
-    virtual int getLevel()
-    {
-        return level;
-    }
-    //handel
-    virtual void levelUp() 
-    {
-        this->level++;
-    }
-    virtual void lifeRegen(int amouth)
-    {
-        this->life = fmin(amouth, getMaxLife());
-    }
-    virtual void lifeRegen()
-    {
-        lifeRegen(1);
-    }
-    virtual void receiveDamage(int damage, int enimy_level)
-    {
-        this->life = fmax(0, this->life-(damage * (enimy_level/level)));
-    }
+void AbstractLivingEntity::receiveDamage(int damage, int enemy_level)
+{
+    this->life-=(damage * (enemy_level/level));
+}
 
-    //inehrent
-    virtual void passBout()
-    {
-        AbstractEntity::passBout();
-    }
-
-};
+//encapsulation
+int AbstractLivingEntity::getMaxLife()
+{
+    return maxlife;
+}
+int AbstractLivingEntity::getLife()
+{
+    return life;
+}
+int AbstractLivingEntity::getDamage()
+{
+    return damage;
+}
+int AbstractLivingEntity::getLevel()
+{
+    return level;
+}
+//handel
+void AbstractLivingEntity::levelUp() 
+{
+    this->level++;
+}
+void AbstractLivingEntity::lifeRegen(int amouth)
+{
+    this->life = fmin(amouth, getMaxLife());
+}
+void AbstractLivingEntity::lifeRegen()
+{
+    lifeRegen(1);
+}
