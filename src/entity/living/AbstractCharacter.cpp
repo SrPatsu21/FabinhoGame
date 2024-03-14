@@ -1,4 +1,4 @@
-#include "./AbstractCharacter.hpp";
+#include "./AbstractCharacter.hpp"
 
 AbstractCharacter::AbstractCharacter(int maxlife = 1, int life = 1, int damage = 0, int level = 0)
  : AbstractLivingEntity(maxlife, life, damage, level)
