@@ -1,5 +1,5 @@
 #ifndef Monster_hpp
-#define MOnster_hpp
+#define Monster_hpp
 
 #include "../AbstractMobs.hpp"
 
