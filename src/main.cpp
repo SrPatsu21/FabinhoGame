@@ -1,9 +1,9 @@
 #include <iostream>
-#include "./entity/living/chars/Hero.hpp"
-#include "./entity/living/chars/Princess.hpp"
-#include "./entity/living/AbstractCharacter.hpp"
-#include "./entity/living/mobs/Monster.hpp"
-#include "./entity/living/AbstractMobs.hpp"
+#include "./entity/chars/Hero.hpp"
+#include "./entity/chars/Princess.hpp"
+#include "./entity/AbstractCharacter.hpp"
+#include "./entity/mobs/Monster.hpp"
+#include "./entity/AbstractMobs.hpp"
 #include "./item/itens/Hammer.hpp"
 #include "./item/itens/Sword.hpp"
 
