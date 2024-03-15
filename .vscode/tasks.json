@@ -7,7 +7,13 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/src/*.cpp",
+                "${workspaceFolder}/src/entity/*.cpp",
+                "${workspaceFolder}/src/entity/chars/*.cpp",
+                "${workspaceFolder}/src/entity/mobs/*.cpp",
+                "${workspaceFolder}/src/item/*.cpp",
+                "${workspaceFolder}/src/item/itens/*.cpp",
+
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
