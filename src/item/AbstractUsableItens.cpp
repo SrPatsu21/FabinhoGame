@@ -1,9 +1,13 @@
 #include "./AbstractUsableItens.hpp"
 
-AbstractUsableItens::AbstractUsableItens()
-{}
-AbstractUsableItens::AbstractUsableItens(int durability, int damage, AbstractLivingEntity* owner)
-: AbstractTakeOnceItem(true, owner)
+AbstractUsableItens::AbstractUsableItens(int durability, int damage)
+: AbstractTakeOnceItem()
+{
+    setDurability(durability);
+    setDamage(damage);
+}
+AbstractUsableItens::AbstractUsableItens(int durability, int damage, AbstractLivingEntity* own)
+: AbstractTakeOnceItem(true, own)
 {
     setDurability(durability);
     setDamage(damage);
@@ -32,4 +36,8 @@ void AbstractUsableItens::setDamage(int damage=0)
 int AbstractUsableItens::getDamage()
 {
     return this->damage;
+};
+void AbstractUsableItens::useItem()
+{
+
 };

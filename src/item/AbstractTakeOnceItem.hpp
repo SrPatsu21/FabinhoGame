@@ -12,7 +12,7 @@ private:
 
 protected:
     AbstractTakeOnceItem();
-    AbstractTakeOnceItem(bool taked, AbstractLivingEntity* owner);
+    AbstractTakeOnceItem(bool taked, AbstractLivingEntity* own);
 
 public:
     ~AbstractTakeOnceItem();
@@ -21,8 +21,6 @@ public:
     virtual void setAsUntaked();
     virtual void setOwner(AbstractLivingEntity* owner);
     virtual AbstractLivingEntity* getOwner();
-
-
 };
 
 #endif

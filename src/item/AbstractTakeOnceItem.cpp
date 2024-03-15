@@ -1,18 +1,20 @@
 #include "AbstractTakeOnceItem.hpp"
+#include "../entity/living/AbstractLivingEntity.hpp"
+
 
 AbstractTakeOnceItem::AbstractTakeOnceItem()
 {
-    this->setAsUntaked();
+    setAsUntaked();
 }
-AbstractTakeOnceItem::AbstractTakeOnceItem(bool taked = true, AbstractLivingEntity* owner)
+AbstractTakeOnceItem::AbstractTakeOnceItem(bool taked, AbstractLivingEntity* own)
 {
-    this->taked = taked;
-    this->setOwner(owner);
+    setAsTaked();
+    setOwner(own);
 };
 
 AbstractTakeOnceItem::~AbstractTakeOnceItem()
 {
-    this->setAsUntaked();
+    this->taked = true;
 }
 
 bool AbstractTakeOnceItem::isTaked()
