@@ -1,5 +1,5 @@
 #include "AbstractTakeOnceItem.hpp"
-#include "../entity/living/AbstractLivingEntity.hpp"
+#include "../entity/AbstractLivingEntity.hpp"
 #include <cstddef>
 
 AbstractTakeOnceItem::AbstractTakeOnceItem()

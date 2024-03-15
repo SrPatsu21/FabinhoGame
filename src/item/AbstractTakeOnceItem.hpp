@@ -2,7 +2,7 @@
 #define AbstractTakeOnceItem_hpp
 
 #include "./InterfaceCollectionable.hpp"
-#include "../entity/living/AbstractLivingEntity.hpp"
+#include "../entity/AbstractLivingEntity.hpp"
 
 class AbstractTakeOnceItem : public InterfaceCollectionable
 {

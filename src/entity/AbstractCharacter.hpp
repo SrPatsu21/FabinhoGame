@@ -2,19 +2,21 @@
 #define AbstractCharacter_hpp
 
 #include "./AbstractLivingEntity.hpp"
+#include "../item/AbstractUsableItens.hpp"
 
 class AbstractCharacter : public AbstractLivingEntity
 {
 private:
-    //when have, add item
+    AbstractUsableItens* item;
 protected:
     AbstractCharacter(int maxlife, int life, int damage, int level);
 public:
-    // ~AbstractCharacter();
+    ~AbstractCharacter();
     
     virtual void atackEnemy(AbstractLivingEntity * enemy, int damage_plus);
-
-    //take item
+    virtual AbstractUsableItens* getItem();
+    virtual void useItem();
+    virtual void setItem(AbstractUsableItens * item);
 
     virtual void passBout();
 };

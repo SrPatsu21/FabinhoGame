@@ -1,7 +1,7 @@
 #ifndef AbstractLivingEntity_hpp
 #define AbstractLivingEntity_hpp
 
-#include "../AbstractEntity.hpp"
+#include "./AbstractEntity.hpp"
 
 class AbstractLivingEntity : public AbstractEntity
 {
