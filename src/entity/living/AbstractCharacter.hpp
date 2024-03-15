@@ -10,10 +10,9 @@ private:
 protected:
     AbstractCharacter(int maxlife, int life, int damage, int level);
 public:
-    ~AbstractCharacter();
-    virtual int getDamage();
-
-    virtual void atackEnemy(AbstractLivingEntity * enemy);
+    // ~AbstractCharacter();
+    
+    virtual void atackEnemy(AbstractLivingEntity * enemy, int damage_plus);
 
     //take item
 

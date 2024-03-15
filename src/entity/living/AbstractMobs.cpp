@@ -5,10 +5,10 @@ AbstractMobs::AbstractMobs(int maxlife, int life, int damage, int level)
 {
 }
 
-AbstractMobs::~AbstractMobs()
-{
-    AbstractLivingEntity::~AbstractLivingEntity();
-}
+// AbstractMobs::~AbstractMobs()
+// {
+//     AbstractLivingEntity::~AbstractLivingEntity();
+// }
 
 void AbstractMobs::passBout()
 {

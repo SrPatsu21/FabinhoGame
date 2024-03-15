@@ -12,7 +12,7 @@ AbstractLivingEntity::AbstractLivingEntity(int maxlife = 1, int life = 1, int da
 
 AbstractLivingEntity::~AbstractLivingEntity()
 {
-    std::cout << "Entity Desapier in" << getBout() << "Bout" << std::endl;
+    std::cout << "Entity Desapier in (" << getBout() << ") Bout" << std::endl;
 }
 
 void AbstractLivingEntity::passBout()
@@ -23,14 +23,18 @@ void AbstractLivingEntity::passBout()
         maxlife = 0;
     }
 }
-void AbstractLivingEntity::atackEnemy(AbstractLivingEntity * enemy, int damage)
+void AbstractLivingEntity::atackEnemy(AbstractLivingEntity * enemy, int damage_plus)
+{
+    enemy->receiveDamage(getDamage()+damage_plus, getLevel());
+}
+void AbstractLivingEntity::atackEnemy(AbstractLivingEntity * enemy)
 {
     enemy->receiveDamage(getDamage(), getLevel());
 }
 
 void AbstractLivingEntity::receiveDamage(int damage, int enemy_level)
 {
-    this->life-=(damage * (enemy_level/level));
+    this->life-=(int)((double)damage * ((double)enemy_level/level));
 }
 
 //encapsulation

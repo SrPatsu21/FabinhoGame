@@ -10,7 +10,7 @@ private:
 protected:
     AbstractMobs(int maxlife, int life, int damage, int level);
 public:
-    ~AbstractMobs();
+    // ~AbstractMobs();
     virtual void passBout();
 };
 

@@ -12,10 +12,8 @@
                 "${workspaceFolder}/src/entity/living/*.cpp",
                 "${workspaceFolder}/src/entity/living/mobs/*.cpp",
                 "${workspaceFolder}/src/entity/living/chars/*.cpp",
-
-
-
-                // "/home/srpatsu21/Desktop/projects/FabinhoGame/src/entity/living/mobs/Monster.cpp",
+                // "${workspaceFolder}/src/item/*.cpp",
+                // "${workspaceFolder}/src/item/itens/*.cpp",
 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

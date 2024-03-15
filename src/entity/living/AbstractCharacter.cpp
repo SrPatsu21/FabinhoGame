@@ -4,10 +4,10 @@ AbstractCharacter::AbstractCharacter(int maxlife = 1, int life = 1, int damage =
  : AbstractLivingEntity(maxlife, life, damage, level)
 {}
 
-AbstractCharacter::~AbstractCharacter()
-{
-    AbstractLivingEntity::~AbstractLivingEntity();
-}
+// AbstractCharacter::~AbstractCharacter()
+// {
+//     AbstractLivingEntity::~AbstractLivingEntity();
+// }
 
 void AbstractCharacter::passBout()
 {
@@ -16,12 +16,7 @@ void AbstractCharacter::passBout()
 
 //take item
 
-int AbstractCharacter::getDamage()
-{
-    return this->getDamage();//+ item damage bonus
-}
-
-void AbstractCharacter::atackEnemy(AbstractLivingEntity * enemy)
+void AbstractCharacter::atackEnemy(AbstractLivingEntity * enemy, int damage_plus)
 {
     enemy->receiveDamage(getDamage(), getLevel());
 }

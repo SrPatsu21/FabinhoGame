@@ -14,7 +14,7 @@ int main()
     AbstractCharacter * player;
     AbstractMobs * monster;
     monster = new Monster();
-    std::cout << "select ou char" << std::endl << "1 Hero \t 2 Princess";
+    std::cout << "select ou char" << std::endl << "1 Hero \t 2 Princess" << std::endl;
     std::cin >> character;
 
     if (1 == character)
@@ -30,30 +30,49 @@ int main()
 
     while(player != NULL && monster != NULL)
     {
-        std::cout << "1 atacar";
+        //player
+        std::cout << "1 atacar" << std::endl;
         std::cin >> action;
         if (1 == action)
         {
-            player->atackEnemy(monster);
+            AbstractLivingEntity * mob = monster;
+            player->atackEnemy(mob, 0);
         }
+        //monster
         monster->atackEnemy(player);
 
-        if (player->getLife() > 0)
+        //print result
+
+        std::cout << "Dados:: player:" << player->getLife() << " monster: " << monster->getLife() << std::endl;
+
+        //verify
+        if (0 >= player->getLife())
         {
             delete player;
+            player = NULL;
         }else 
         {
             player->passBout();
         }
 
-        if (monster->getLife() > 0)
+        if (0 >= monster->getLife())
         {
             delete monster;
+            monster = NULL;
         }else 
         {
             monster->passBout();
         }        
     }
+    std::cout << "fim da batalha" << std::endl;
+    if (NULL != player)
+    {
+        std::cout << "Parabens vc venceu de um monstro peba" << std::endl;
+    } else
+    {
+        std::cout << "Parabens vc perdeu para monstro peba" << std::endl;
+    }
+    
     
     return 0;
 }
