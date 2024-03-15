@@ -4,7 +4,10 @@
 class AbstractEntity
 {
     int bout;
-    public:
+protected:
+    AbstractEntity();
+public:
+    ~AbstractEntity();
     virtual int getBout();
     virtual void passBout();
     

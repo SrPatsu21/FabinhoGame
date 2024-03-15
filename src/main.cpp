@@ -37,18 +37,25 @@ int main()
     }else if (op == 2)
     {
         weapon = new Hammer();
+    }else
+    {
+        weapon = new Sword();
     }
+    player->setItem(weapon);
 
     while(player != NULL && monster != NULL)
     {
         //player
-        std::cout << "1 atacar" << std::endl;
+        std::cout << "1 atacar \t 2 usar item" << std::endl;
         std::cin >> action;
         if (1 == action)
         {
-            AbstractLivingEntity * mob = monster;
-            player->atackEnemy(mob, 0);
+            player->atackEnemy((AbstractLivingEntity*) monster, 0);
+        }else if (2 == action)
+        {
+            player->useItem();
         }
+        
         //monster
         monster->atackEnemy(player);
 
@@ -83,7 +90,6 @@ int main()
     {
         std::cout << "Parabens vc perdeu para monstro peba" << std::endl;
     }
-    
     
     return 0;
 }
