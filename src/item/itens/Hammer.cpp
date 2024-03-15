@@ -11,4 +11,6 @@ Hammer::~Hammer()
 
 void Hammer::useItem()
 {
+    getOwner()->lifeRegen(3);
+    reduceDurability();
 };

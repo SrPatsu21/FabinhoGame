@@ -7,19 +7,21 @@
 class AbstractTakeOnceItem : public InterfaceCollectionable
 {
 private:
-    static bool taked;
-    static AbstractLivingEntity* owner;
-
+    bool taked;
+    AbstractLivingEntity* owner;
 protected:
     AbstractTakeOnceItem();
     AbstractTakeOnceItem(bool taked, AbstractLivingEntity* own);
 
 public:
+
     ~AbstractTakeOnceItem();
+
     virtual bool isTaked();
     virtual void setAsTaked();
     virtual void setAsUntaked();
     virtual void setOwner(AbstractLivingEntity* owner);
+    virtual void removeOwner();
     virtual AbstractLivingEntity* getOwner();
 };
 

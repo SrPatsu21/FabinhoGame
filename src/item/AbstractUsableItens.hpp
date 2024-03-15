@@ -16,6 +16,8 @@ public:
     ~AbstractUsableItens();
 
     virtual void setDurability(int durability);
+    virtual void reduceDurability();
+    virtual void reduceDurability(int amout);
     virtual int getDurability();
     virtual void setDamage(int damage);
     virtual int getDamage();

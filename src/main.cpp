@@ -4,28 +4,39 @@
 #include "./entity/living/AbstractCharacter.hpp"
 #include "./entity/living/mobs/Monster.hpp"
 #include "./entity/living/AbstractMobs.hpp"
-
-
+#include "./item/itens/Hammer.hpp"
+#include "./item/itens/Sword.hpp"
 
 int main()
 {
-    int character;
+    int op;
     int action;
     AbstractCharacter * player;
     AbstractMobs * monster;
+    AbstractUsableItens* weapon;
     monster = new Monster();
-    std::cout << "select ou char" << std::endl << "1 Hero \t 2 Princess" << std::endl;
-    std::cin >> character;
+    std::cout << "selecione seu char:" << std::endl << "1 Hero \t 2 Princess" << std::endl;
+    std::cin >> op;
 
-    if (1 == character)
+    if (1 == op)
     {
         player = new Hero();
-    }else if(2 == character)
+    }else if(2 == op)
     {
         player = new Princess();
     }else
     {
         player = new Hero();
+    }
+
+    std::cout << "select sua arma:" << std::endl << "1 espada \t 2 martelo" << std::endl;
+    std::cin >> op;
+    if(op == 1)
+    {
+        weapon = new Sword();
+    }else if (op == 2)
+    {
+        weapon = new Hammer();
     }
 
     while(player != NULL && monster != NULL)

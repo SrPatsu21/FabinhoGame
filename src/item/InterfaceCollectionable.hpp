@@ -6,5 +6,7 @@ class InterfaceCollectionable
 protected:
     InterfaceCollectionable();
     virtual void setAsTaked() = 0;
+public:
+    ~InterfaceCollectionable();
 };
 #endif

@@ -1,10 +1,11 @@
 #include "AbstractTakeOnceItem.hpp"
 #include "../entity/living/AbstractLivingEntity.hpp"
-
+#include <cstddef>
 
 AbstractTakeOnceItem::AbstractTakeOnceItem()
 {
     setAsUntaked();
+    removeOwner();
 }
 AbstractTakeOnceItem::AbstractTakeOnceItem(bool taked, AbstractLivingEntity* own)
 {
@@ -12,10 +13,7 @@ AbstractTakeOnceItem::AbstractTakeOnceItem(bool taked, AbstractLivingEntity* own
     setOwner(own);
 };
 
-AbstractTakeOnceItem::~AbstractTakeOnceItem()
-{
-    this->taked = true;
-}
+AbstractTakeOnceItem::~AbstractTakeOnceItem(){}
 
 bool AbstractTakeOnceItem::isTaked()
 {
@@ -32,11 +30,17 @@ void AbstractTakeOnceItem::setAsUntaked()
     this->taked = false;
 };
 
-void AbstractTakeOnceItem::setOwner(AbstractLivingEntity* owner)
+void AbstractTakeOnceItem::setOwner(AbstractLivingEntity* own)
 {
-    this->owner = owner;
+    this->owner = own;
 };
+void AbstractTakeOnceItem::removeOwner()
+{
+    this->owner = 0;
+};
+
+
 AbstractLivingEntity* AbstractTakeOnceItem::getOwner()
 {
-    return this->owner;
+    return owner;
 };
