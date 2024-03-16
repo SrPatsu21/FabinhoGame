@@ -1,30 +1,30 @@
-[<<Abstract>>AbstractEntity]<-[<<Abstract>>AbstractLivingEntity]
-[WorldMap]
+yuml
+{
 
 //LivingEntity
-[<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>Animal]
+[<<Abstract>>AbstractEntity]<-[<<Abstract>>AbstractLivingEntity]
 [<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>Mobs]
-[<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>Talktaive]
 [<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>AbstractCharacter]
 [<<Abstract>>AbstractCharacter]<-[Hero]
+[<<Abstract>>AbstractCharacter]<-[{Princess]
 [<<Abstract>>Mobs]<-[monster]
 
 //itens
-[<<Interface>>InterfaceCollectionable]<-[<<Abstract>>AbstractItens]
-[<<Abstract>>AbstractItens]<-[<<Abstract>>AbstractUsableItens]
-[<<Abstract>>AbstractItens]<-[<<Abstract>>AbstractThrowableItens]
-[<<Abstract>>AbstractEntity]<-[AbstractParticles]
-[<<Abstract>>AbstractThrowableItens]<-[stone]
+[<<Interface>>InterfaceCollectionable]<-[<<Abstract>>AbstractTakeOnceItem]
+[<<Interface>>AbstractTakeOnceItem]<-[<<Abstract>>AbstractUsableItens]
 [<<Abstract>>AbstractUsableItens]<-[sword]
-[<<Abstract>>AbstractUsableItens]<-[potion]
-[<<Abstract>>AbstractUsableItens]<-[bow]
-[<<Abstract>>AbstractItens]<-[arrow]
+[<<Abstract>>AbstractUsableItens]<-[hammer]
 
 //attributs
-[<<Abstract>>AbstractCharacter||+attack(); +defend()]
-[<<Abstract>>AbstractLivingEntity|-life: int; -damage: int|]
-[<<Abstract>>AbstractUsableItens|-damage: int|+use(); +block()]
-[<<Interface>>Collectionable||+take();+discard()]
-[<<Abstract>>AbstractItens|taked: boolean|]
-[monster||+attack()]
-[<<Abstract>>AbstractThrowableItens||+thow()]
+[<<Interface>>InterfaceCollectionable||#setAsTaked();]
+[<<Abstract>>AbstractTakeOnceItem|-taked: bool; -owner:AbstractLivingEntity*|+isTaked(); +setAsTaked(); +setAsUntaked(); +setOwner(); +removeOwner(); +getOwner()]
+[<<Abstract>>AbstractUsableItens|-durability: int; -damage: int|+setDurability(); +reduceDurability(); +reduceDurability(); +getDurability(); +setDamage(); +getDamage(); +useItem()]
+[hammer||+useItem()]
+[sword||+useItem()]
+
+[<<Abstract>>AbstractEntity|-bout: int|+getBout(); +passBout();]
+[<<Abstract>>AbstractLivingEntity|-maxlife: int; -life: int; -damage: int; -level: int|+atackEnemy(); +receiveDamage(); +lifeRegen(); +levelUp(); +getLevel(); +getDamage(); +getLife(); +getMaxLife(); +passBout()]
+[<<Abstract>>Mobs||+passBout()]
+[<<Abstract>>AbstractCharacter| -item: AbstractUsableItens*| +atackEnemy(); +getItem(); +useItem(); +setItem(); +passBout();]
+
+}
