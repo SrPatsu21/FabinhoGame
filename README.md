@@ -6,7 +6,7 @@ yuml
 [<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>Mobs]
 [<<Abstract>>AbstractLivingEntity]<-[<<Abstract>>AbstractCharacter]
 [<<Abstract>>AbstractCharacter]<-[Hero]
-[<<Abstract>>AbstractCharacter]<-[{Princess]
+[<<Abstract>>AbstractCharacter]<-[Princess]
 [<<Abstract>>Mobs]<-[monster]
 
 //itens
