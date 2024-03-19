@@ -10,10 +10,10 @@ AbstractCharacter::~AbstractCharacter(){}
 
 void AbstractCharacter::passBout()
 {
-    AbstractLivingEntity::passBout();
+    AbstractLivingEntity::passBout();    
 }
 
-void AbstractCharacter::atackEnemy(AbstractLivingEntity * enemy, int damage_plus)
+void AbstractCharacter::atackEnemy(AbstractLivingEntity * enemy)
 {
     if (getItem() == NULL)
     {

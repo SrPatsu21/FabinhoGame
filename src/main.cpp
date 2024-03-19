@@ -50,7 +50,7 @@ int main()
         std::cin >> action;
         if (1 == action)
         {
-            player->atackEnemy((AbstractLivingEntity*) monster, 0);
+            player->atackEnemy((AbstractLivingEntity*) monster);
         }else if (2 == action)
         {
             player->useItem();

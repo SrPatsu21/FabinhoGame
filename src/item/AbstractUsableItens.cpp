@@ -27,11 +27,15 @@ void AbstractUsableItens::setDurability(int durability=1)
 };
 void AbstractUsableItens::reduceDurability()
 {
-    this->damage -= 1;
+    reduceDurability(1);
 };
 void AbstractUsableItens::reduceDurability(int amout)
 {
-    this->damage -= amout;
+    this->durability -= amout;
+    if(getDurability() == 0)
+    {
+        delete this;
+    }
 };
 int AbstractUsableItens::getDurability()
 {
@@ -47,5 +51,4 @@ int AbstractUsableItens::getDamage()
 };
 void AbstractUsableItens::useItem()
 {
-
 };

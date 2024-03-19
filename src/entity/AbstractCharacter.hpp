@@ -13,7 +13,7 @@ protected:
 public:
     ~AbstractCharacter();
     
-    virtual void atackEnemy(AbstractLivingEntity * enemy, int damage_plus);
+    virtual void atackEnemy(AbstractLivingEntity * enemy);
     virtual AbstractUsableItens* getItem();
     virtual void useItem();
     virtual void setItem(AbstractUsableItens * item);

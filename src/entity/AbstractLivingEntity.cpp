@@ -61,7 +61,7 @@ void AbstractLivingEntity::levelUp()
 }
 void AbstractLivingEntity::lifeRegen(int amouth)
 {
-    this->life = fmin(amouth, getMaxLife());
+    this->life = fmin(amouth + getLife(), getMaxLife());
 }
 void AbstractLivingEntity::lifeRegen()
 {
